@@ -2,19 +2,27 @@
     <br>
     <form>
         <mat-form-field appearance="fill">
-            <mat-label>Ingrese una tarea</mat-label>
-            <input matInput>
+            <mat-label type="text">Ingrese una tarea</mat-label>
+            <input (keydown.enter)="addTask()" type="text" [(ngModel)]="taskName" matInput name="taskName">
         </mat-form-field>
-        <button mat-raised-button>Agregar tarea</button>
+        <button type="button" mat-raised-button (click)="addTask()" [disabled]="!taskName">Agregar tarea</button>
         <br>
-        <mat-card *ngIf="true">
+        <mat-card *ngIf="tasks.length == 0">
             <h3 style="font-weight: 500;">No hay tareas pendientes</h3>
             <mat-divider></mat-divider>
         </mat-card>
-        <br>
-        <mat-card *ngIf="true">
-            <h3 style="font-weight: 500;">No hay tareas completadas</h3>
+
+        <mat-card *ngIf="tasks.length > 0">
+            <h3 style="font-weight: 500;">Listado de Tareas</h3>
             <mat-divider></mat-divider>
+            <br>
+            <ul>
+                <li *ngFor="let task of tasks; let indice = index;">
+                    <mat-checkbox [checked]="tasks[indice].completed" name="task" [(ngModel)]="tasks[indice].completed"
+                        (ngModelChange)="changeStateTask(indice)"> {{ task.name }} {{tasks[indice].completed}} </mat-checkbox>
+                </li>
+            </ul>
         </mat-card>
+
     </form>
 </div>
