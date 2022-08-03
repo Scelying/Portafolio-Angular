@@ -34,4 +34,20 @@ export class TodoListComponent implements OnInit {
     this.taskService.saveTasks(this.tasksList);
   }
 
+  deleteTask(i: number, taskName: string) {
+    const confirmacion = confirm(`¿Desea eliminar la tarea: "${taskName}"?`)
+
+    if (!confirmacion) {
+      return;
+    }
+
+    this.tasksList.splice(i, 1);
+    this.taskService.saveTasks(this.tasksList);
+  }
+
+  // deleteDialog(i: number, name: string): void {
+  //   this.dialog.open(TodoListComponent);
+
+  // }
+
 }

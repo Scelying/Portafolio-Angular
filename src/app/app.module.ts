@@ -12,6 +12,7 @@ import { MatDividerModule } from "@angular/material/divider";
 import { MatListModule } from "@angular/material/list";
 import { MatInputModule } from "@angular/material/input";
 import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatDialogModule } from "@angular/material/dialog";
 import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
@@ -37,6 +38,7 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
     MatListModule,
     MatInputModule,
     MatCheckboxModule,
+    MatDialogModule,
     FormsModule
   ],
   providers: [],

@@ -25,5 +25,29 @@ form {
 }
 
 ul {
+    display: flex;
+    flex-direction: column;
     list-style-type: none;
+    align-items: left;
+}
+
+li {
+    display: flex;
+    background-color:#ffffff;
+    margin: 5px;
+    margin-bottom: 10px;
+    padding: 4px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 2px 1px rgba(31, 31, 31, 0.233);
+}
+
+
+.delete-icon {
+    color: crimson;
+}
+
+.spacer {
+    flex: 1 1 auto;
 }

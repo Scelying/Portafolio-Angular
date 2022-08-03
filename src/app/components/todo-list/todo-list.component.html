@@ -17,9 +17,11 @@
             <mat-divider></mat-divider>
             <br>
             <ul>
-                <li *ngFor="let task of tasksList; let indice = index;">
-                    <mat-checkbox [ngModelOptions]="{standalone: true}" [(ngModel)]="task.completed"
-                        (ngModelChange)="changeStateTask()"> {{ task.name }} - {{task.completed}} </mat-checkbox>
+                <li *ngFor="let task of tasksList; let i = index;">
+                    <mat-checkbox [ngModelOptions]="{standalone: true}" [(ngModel)]="task.completed" color="primary"
+                        (ngModelChange)="changeStateTask()"> {{ task.name }}</mat-checkbox>
+                    <span class="spacer"></span>
+                    <mat-icon (click)="deleteTask(i, task.name)" class="delete-icon">delete</mat-icon>
                 </li>
             </ul>
         </mat-card>
