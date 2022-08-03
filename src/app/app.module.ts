@@ -18,12 +18,14 @@ import { FormsModule } from "@angular/forms";
 import { AppComponent } from './app.component';
 import { HomeProfileComponent } from './components/home-profile/home-profile.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeProfileComponent,
-    TodoListComponent
+    TodoListComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,7 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
     MatDialogModule,
     FormsModule
   ],
+  // entryComponents:[ConfirmDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

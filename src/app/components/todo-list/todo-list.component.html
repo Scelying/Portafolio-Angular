@@ -1,5 +1,14 @@
 <div class="main-div">
     <br>
+
+    <div class="header">
+        <h1>Lista de tareas</h1>
+        <mat-divider></mat-divider>
+        <p>La siguiente aplicación permite almacenar tareas en la memoria del navegador. Al reiniciar el dispositivo los
+            datos se borarán. El botón para agregar una tarea se activará cuando se digita texto en la casilla. </p>
+    </div>
+
+    <br>
     <form>
         <mat-form-field appearance="fill">
             <mat-label type="text">Ingrese una tarea</mat-label>
@@ -13,7 +22,7 @@
         </mat-card>
 
         <mat-card *ngIf="tasksList.length > 0">
-            <h3 style="font-weight: 500;">Listado de Tareas</h3>
+            <h2 style="font-weight: 500;">Listado de Tareas</h2>
             <mat-divider></mat-divider>
             <br>
             <ul>
@@ -21,7 +30,7 @@
                     <mat-checkbox [ngModelOptions]="{standalone: true}" [(ngModel)]="task.completed" color="primary"
                         (ngModelChange)="changeStateTask()"> {{ task.name }}</mat-checkbox>
                     <span class="spacer"></span>
-                    <mat-icon (click)="deleteTask(i, task.name)" class="delete-icon">delete</mat-icon>
+                    <mat-icon (click)="deleteDialog(i, task.name)" class="delete-icon">delete</mat-icon>
                 </li>
             </ul>
         </mat-card>
