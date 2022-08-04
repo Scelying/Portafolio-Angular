@@ -4,16 +4,20 @@
     <div class="header">
         <h1>Lista de tareas</h1>
         <mat-divider></mat-divider>
-        <p>La siguiente aplicación permite almacenar tareas en la memoria del navegador. Al reiniciar el dispositivo los
-            datos se borarán. El botón para agregar una tarea se activará cuando se digita texto en la casilla. </p>
+        <p>La siguiente aplicación permite almacenar tareas en la memoria local del navegador. Al reiniciar el
+            dispositivo los datos se eliminan. <br><br> El botón para agregar una tarea se activará cuando se digita texto en la
+            casilla y cada tarea tiene un limite de 50 caracteres.</p>
     </div>
 
     <br>
     <form>
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" hintLabel="Máx. 300 caracteres">
             <mat-label type="text">Ingrese una tarea</mat-label>
-            <input (keydown.enter)="addTask()" type="text" [(ngModel)]="taskName" matInput name="taskName">
+            <input matInput maxlength="50" (keydown.enter)="addTask()" type="text" [(ngModel)]="taskName" matInput
+                name="taskName">
+            <mat-hint align="end">{{taskName.length || 0}}/50</mat-hint>
         </mat-form-field>
+        <br>
         <button type="button" mat-raised-button (click)="addTask()" [disabled]="!taskName">Agregar tarea</button>
         <br>
         <mat-card *ngIf="tasksList.length == 0">
@@ -21,18 +25,18 @@
             <mat-divider></mat-divider>
         </mat-card>
 
-        <mat-card *ngIf="tasksList.length > 0">
+        <mat-card *ngIf="tasksList.length > 0" max-width="200">
             <h2 style="font-weight: 500;">Listado de Tareas</h2>
             <mat-divider></mat-divider>
             <br>
-            <ul>
-                <li *ngFor="let task of tasksList; let i = index;">
-                    <mat-checkbox [ngModelOptions]="{standalone: true}" [(ngModel)]="task.completed" color="primary"
-                        (ngModelChange)="changeStateTask()"> {{ task.name }}</mat-checkbox>
-                    <span class="spacer"></span>
-                    <mat-icon (click)="deleteDialog(i, task.name)" class="delete-icon">delete</mat-icon>
-                </li>
-            </ul>
+
+            <li *ngFor="let task of tasksList; let i = index;">
+                <mat-checkbox [ngModelOptions]="{standalone: true}" [(ngModel)]="task.completed" color="primary"
+                    (ngModelChange)="changeStateTask()"> {{ task.name }}</mat-checkbox>
+                <span class="spacer"></span>
+                <mat-icon (click)="deleteDialog(i, task.name)" class="delete-icon">delete</mat-icon>
+            </li>
+
         </mat-card>
 
     </form>

@@ -3,3 +3,24 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/** wrap label */
+.mat-checkbox-layout {
+    white-space: normal !important;
+  }
+  
+  /** keep checkbox on first line */
+  .mat-checkbox-inner-container {
+    margin-top: 4px !important;
+  }
+  
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /** wrap label ie */
+    .mat-checkbox-layout {
+      display: block !important;
+    }
+  
+    .mat-checkbox-inner-container {
+      margin-top: 0 !important;
+    }
+  }

@@ -13,7 +13,9 @@
 
 div.header {
     display: flex;
-    width: 60%;
+    max-width: 600px;
+    min-width: 250px;
+    width: 80%;
     background-color: #ffffff;
     justify-content: center;
     flex-direction: column;
@@ -26,7 +28,9 @@ div.header {
 form {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    max-width: 600px;
+    min-width: 250px;
+    width: 80%;
     justify-content: center;
 }
 
