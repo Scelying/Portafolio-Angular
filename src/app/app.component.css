@@ -2,6 +2,10 @@ h1 {
     text-align: center;
 }
 
+h3 {
+    font-weight: bold;
+}
+
 mat-toolbar {
     background-color: #282A36;
     color: white;
@@ -12,7 +16,7 @@ mat-toolbar {
 
 }
 
-/* mat-list-item {
+/* .drawer-item {
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 10px;
@@ -24,16 +28,16 @@ mat-toolbar {
     padding-top: 10px;
 }
 
-mat-list-item {
+.drawer-item {
     background-color: #fafafa;
-    border-radius: 25px;
+    border-radius: 50px;
     margin: 4px;
     box-shadow: -2px 2px 2px 1px rgba(31, 31, 31, 0.233);
     transition: box-shadow .25s;
     filter: blur(0px);
 }
 
-mat-list-item:hover {
+.drawer-item:hover {
     font-size: small;
     font-weight: 500;
     background-color: #fafafa;
@@ -44,20 +48,59 @@ footer {
     text-align: center;
     position: sticky;
     bottom: 0;
-
     width: 100%;
     height: 60px;
     background-color: #e8eaeb;
     color: rgb(15, 15, 15);
-    z-index: 1000;
+    z-index: 1;
 }
 
 a {
     font-size: small;
+    font-weight: 500;
     text-decoration: none;
     color: #282A36;
 }
 
 a.active {
-    background-color: aqua;
+    color: #34b3f3;
+    font-weight: bold;
+}
+
+
+
+li {
+    display: flex;
+    align-content: center;
+    background-color: #fafafa;
+    list-style-type: none;
+    border-radius: 5px;
+    /* box-shadow: -2px 2px 2px 1px rgba(31, 31, 31, 0.233); */
+    transition: box-shadow .25s;
+    margin: 6px;
+    padding: 5px;
+}
+
+li:hover {
+    font-size: small;
+    background-color: #f5f2f2;
+    box-shadow: -1px 1px 1px 1px rgba(31, 31, 31, 0.233);
+}
+
+li.active {
+    background-color: #c3ebff;
+}
+
+.list-icon {
+    display: flex;
+}
+
+p {
+    margin: 0px;
+    font-size:x-small;
+}
+
+p a {
+    margin: 0px;
+    font-size:small;
 }

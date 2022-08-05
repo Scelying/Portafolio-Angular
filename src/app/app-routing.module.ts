@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeProfileComponent } from './components/home-profile/home-profile.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { WeatherAppComponent } from './weather-app/weather-app.component';
 
 const routes: Routes = [
-  {path:'', component: HomeProfileComponent},
-  {path:'todo-list', component: TodoListComponent}
+  {path:'', redirectTo:'/home', pathMatch: 'full'},
+  {path:'home', component: HomeProfileComponent},
+  {path:'todo-list', component: TodoListComponent},
+  {path:'weather-app', component: WeatherAppComponent}
 ];
 
 @NgModule({

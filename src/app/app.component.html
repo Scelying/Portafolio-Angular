@@ -12,15 +12,23 @@
     <h3 class="drawer-title">Aplicaciones Portafolio</h3>
     <mat-divider></mat-divider>
     <mat-list>
-      <mat-list-item class="drawer-item">
-        <a routerLink="/" routerLinkActive="active" (click)="drawer.toggle()"
-          ariaCurrentWhenActive="page">Perfil</a>
-      </mat-list-item>
+      <a routerLink="/home" routerLinkActive="active" (click)="drawer.toggle()" ariaCurrentWhenActive="page">
+        <li routerLinkActive="active">
+          <mat-icon>assignment_ind</mat-icon> &nbsp; Perfil
+        </li>
+      </a>
 
-      <mat-list-item class="drawer-item">
-        <a routerLink="/todo-list" routerLinkActive="active" (click)="drawer.toggle()" ariaCurrentWhenActive="page">
-          Lista de tareas</a>
-      </mat-list-item>
+      <a routerLink="/todo-list" routerLinkActive="active" (click)="drawer.toggle()" ariaCurrentWhenActive="page">
+        <li routerLinkActive="active">
+          <mat-icon class="list-icon">check_circle</mat-icon> &nbsp; Lista de tareas
+        </li>
+      </a>
+
+      <a routerLink="/weather-app" routerLinkActive="active" (click)="drawer.toggle()" ariaCurrentWhenActive="page">
+        <li routerLinkActive="active">
+          <mat-icon class="list-icon">wb_sunny</mat-icon> &nbsp; Aplicación del Clima
+        </li>
+      </a>
 
     </mat-list>
   </mat-sidenav>
@@ -32,6 +40,7 @@
 
 <!-- Footer -->
 <footer>
-  <br>
-  <p>Elaborado con Angular</p>
+  <p> <a href="https://www.linkedin.com/in/sebastian-cely/" target="_blank">Contacto LinkedIn</a></p>
+  <p>Elaborado en Angular por: Sebastian Cely</p>
+  <p>2022</p>
 </footer>
