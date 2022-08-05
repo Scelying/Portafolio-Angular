@@ -12,12 +12,16 @@
     <h3 class="drawer-title">Aplicaciones Portafolio</h3>
     <mat-divider></mat-divider>
     <mat-list>
-      <a routerLink="/" routerLinkActive="active" (click)="drawer.toggle()" ariaCurrentWhenActive="page">
-        <mat-list-item class="drawer-item">Perfil</mat-list-item>
-      </a>
-      <a routerLink="/todo-list" routerLinkActive="active" (click)="drawer.toggle()" ariaCurrentWhenActive="page">
-        <mat-list-item class="drawer-item">Lista de tareas</mat-list-item>
-      </a>
+      <mat-list-item class="drawer-item">
+        <a routerLink="/" routerLinkActive="active" (click)="drawer.toggle()"
+          ariaCurrentWhenActive="page">Perfil</a>
+      </mat-list-item>
+
+      <mat-list-item class="drawer-item">
+        <a routerLink="/todo-list" routerLinkActive="active" (click)="drawer.toggle()" ariaCurrentWhenActive="page">
+          Lista de tareas</a>
+      </mat-list-item>
+
     </mat-list>
   </mat-sidenav>
   <mat-sidenav-content>
