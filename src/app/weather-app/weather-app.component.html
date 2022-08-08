@@ -1,4 +1,13 @@
 <div class="main-div">
     <br>
-    <p>Build in weather-app!</p>
+    <mat-card>
+        <div *ngIf="loading">
+            <h2>Cargando información, por favor espere.</h2>
+            <p style="text-align: center; color: red;">App en construcción</p>
+        </div>
+
+        <div *ngIf="!loading">
+            <p>Api succes!</p>
+        </div>
+    </mat-card>
 </div>
