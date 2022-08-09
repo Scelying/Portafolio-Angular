@@ -10,3 +10,17 @@
     background-size: cover;
 
 }
+
+div.header {
+    display: flex;
+    max-width: 600px;
+    min-width: 250px;
+    width: 80%;
+    background-color: #ffffff;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+    box-shadow: -1px 1px 4px 1px rgba(31, 31, 31, 0.233);
+}

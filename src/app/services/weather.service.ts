@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class WeatherService {
-  private ROUTE_API_LOCATION = "https://freegeoip.app/json/";
+  private ROUTE_API_LOCATION = "http://ip-api.com/json/";
 
   constructor() { }
 
@@ -14,7 +14,7 @@ export class WeatherService {
   }
 
   async getWeatherData(longitude: string, latitude: string) {
-    const response = await fetch('http://www.7timer.info/bin/civillight.php?lon=${longitude}&lat=${latitude}&ac=0&unit=metric&output=json')
+    const response = await fetch(`http://www.7timer.info/bin/civillight.php?lon=${longitude}&lat=${latitude}&ac=0&unit=metric&output=json`)
     return await response.json();
   }
 

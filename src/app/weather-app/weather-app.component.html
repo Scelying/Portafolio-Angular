@@ -1,13 +1,23 @@
 <div class="main-div">
     <br>
+    <div class="header">
+        <h1>Aplicación del clima</h1>
+        <mat-divider></mat-divider>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, eum fuga? Ex dolore aperiam temporibus
+            ab commodi harum ut quaerat inventore. Asperiores in adipisci quidem hic repellat! Temporibus, illum
+            delectus.</p>
+    </div>
+    <br>
+
     <mat-card>
         <div *ngIf="loading">
             <h2>Cargando información, por favor espere.</h2>
-            <p style="text-align: center; color: red;">App en construcción</p>
         </div>
 
-        <div *ngIf="!loading">
+        <div *ngIf="!loading" style="text-align: center">
             <p>Api succes!</p>
+            <p>Your location is: {{country_name}}, {{region_name}} in {{city}} city. </p>
+            <p>Hoy es {{detailsToday}} </p>
         </div>
     </mat-card>
 </div>

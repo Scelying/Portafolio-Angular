@@ -47,9 +47,10 @@ export class WeatherAppComponent implements OnInit {
     this.loading = true;
     const locationData = await this.weatherService.getLocationData();
     this.city = locationData.city;
-    this.region_name = locationData.region_name;
-    this.country_name = locationData.country_name;
-    const {latitude, longitude} = locationData;
+    this.region_name = locationData.region;
+    this.country_name = locationData.country;
+    const latitude = locationData.lat;
+    const longitude = locationData.lon;
 
     const weatherData = await this.weatherService.getWeatherData(latitude, longitude);
     
@@ -58,6 +59,10 @@ export class WeatherAppComponent implements OnInit {
 
     this.loading = false;
     this.startWatch();
+    
+    console.log(weatherData);
+    console.log(this.detailsToday);
+    
   }
 
 }
