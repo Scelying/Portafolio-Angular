@@ -17,7 +17,8 @@ export class WeatherService {
   }
 
   async getWeatherData(longitude: string, latitude: string) {
-    const response = await fetch(`http://www.7timer.info/bin/civillight.php?lon=${longitude}&lat=${latitude}&ac=0&unit=metric&output=json`)
+    const response = await fetch(`https://fcc-weather-api.glitch.me/api/current?lat=${latitude}&lon=${longitude}`)
+    console.log(response);
     return await response.json();
   }
 
