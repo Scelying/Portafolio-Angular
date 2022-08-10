@@ -48,9 +48,9 @@ export class WeatherAppComponent implements OnInit {
     const locationData = await this.weatherService.getLocationData();
     this.city = locationData.city;
     this.region_name = locationData.region;
-    this.country_name = locationData.country;
-    const latitude = locationData.lat;
-    const longitude = locationData.lon;
+    this.country_name = locationData.country_name;
+    const latitude = locationData.latitude;
+    const longitude = locationData.longitude;
 
     const weatherData = await this.weatherService.getWeatherData(latitude, longitude);
     

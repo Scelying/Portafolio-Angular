@@ -4,12 +4,15 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class WeatherService {
-  private ROUTE_API_LOCATION = "http://ip-api.com/json/";
+  // private ipGeoAPIKey = '6888e513f25640448f7ae8d2869fc399';
+  // private ROUTE_API_LOCATION = `https://api.ipgeolocation.io/ipgeo?apiKey=${this.ipGeoAPIKey}`;
+  private ROUTE_API_LOCATION = 'https://json.geoiplookup.io/';
 
   constructor() { }
 
   async getLocationData() {
     const response = await fetch(this.ROUTE_API_LOCATION);
+    console.log(response);
     return await response.json();
   }
 
@@ -18,14 +21,14 @@ export class WeatherService {
     return await response.json();
   }
 
-  parseDate(value: string){
+  parseDate(value: string) {
     value = "" + value;
     if (!value) {
       return "";
-    } 
+    }
     let year = value.substring(0, 4);
     let month = value.substring(4, 6);
     let day = value.substring(6, 8);
-    return year + "-" + month + "-" + day; 
+    return year + "-" + month + "-" + day;
   }
 }
