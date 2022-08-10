@@ -4,7 +4,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class WeatherService {
-  // private ipGeoAPIKey = '6888e513f25640448f7ae8d2869fc399';
+  readonly options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '8895a30e96msh9b6ae83d4c51df2p1b1544jsn252c9d717f4f',
+      'X-RapidAPI-Host': 'weatherbit-v1-mashape.p.rapidapi.com'
+    }
+  };
   // private ROUTE_API_LOCATION = `https://api.ipgeolocation.io/ipgeo?apiKey=${this.ipGeoAPIKey}`;
   private ROUTE_API_LOCATION = 'https://json.geoiplookup.io/';
 
@@ -16,9 +22,8 @@ export class WeatherService {
     return await response.json();
   }
 
-  async getWeatherData(longitude: string, latitude: string) {
-    const response = await fetch(`https://fcc-weather-api.glitch.me/api/current?lat=${latitude}&lon=${longitude}`)
-    console.log(response);
+  async getWeatherData(latitude: string, longitude: string) {
+    const response = await fetch(`https://weatherbit-v1-mashape.p.rapidapi.com/forecast/3hourly?lat=${latitude}&lon=${longitude}`, this.options)
     return await response.json();
   }
 

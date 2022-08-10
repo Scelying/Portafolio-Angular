@@ -54,6 +54,7 @@ export class WeatherAppComponent implements OnInit {
 
     const weatherData = await this.weatherService.getWeatherData(latitude, longitude);
     
+    this.detailsToday = weatherData.data[0].weather.description;
     // this.detailsToday = weatherData.dataseries.slice(0, 1)[0];
     // this.detailsNextDays = weatherData.dataseries.slice(1, 5);
 
