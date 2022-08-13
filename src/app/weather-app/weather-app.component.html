@@ -15,9 +15,16 @@
         </div>
 
         <div *ngIf="!loading" style="text-align: center">
-            <p>Api succes!</p>
-            <p>Your location is: {{country_name}}, {{region_name}} in {{city}} city. </p>
-            <p>Hoy es {{detailsToday}} </p>
+            <p> Your location is: <i>{{country_name}}, {{region_name}} in {{city}}. </i></p>
+            <h2>The weather now is {{weatherNow}} </h2>
+            <mat-grid-list cols="3" rowHeight="2:1">
+                <mat-grid-tile colspan="1"><mat-icon>wb_cloudy</mat-icon></mat-grid-tile>
+                <mat-grid-tile colspan="2">
+                    <p>Datetime: </p> 
+                    <p>Temp: </p> 
+
+                </mat-grid-tile>
+            </mat-grid-list>
         </div>
     </mat-card>
 </div>

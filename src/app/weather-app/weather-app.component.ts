@@ -13,7 +13,7 @@ export class WeatherAppComponent implements OnInit {
   region_name = "";
   country_name = "";
   hour = "";
-  detailsToday = {};
+  weatherNow = {};
   detailsNextDays = [];
 
   constructor(private weatherService: WeatherService) { }
@@ -54,7 +54,7 @@ export class WeatherAppComponent implements OnInit {
 
     const weatherData = await this.weatherService.getWeatherData(latitude, longitude);
     
-    this.detailsToday = weatherData.data[0].weather.description;
+    this.weatherNow = weatherData.data[0].weather.description;
     // this.detailsToday = weatherData.dataseries.slice(0, 1)[0];
     // this.detailsNextDays = weatherData.dataseries.slice(1, 5);
 
@@ -62,7 +62,7 @@ export class WeatherAppComponent implements OnInit {
     this.startWatch();
     
     console.log(weatherData);
-    console.log(this.detailsToday);
+    console.log(this.weatherNow);
     
   }
 

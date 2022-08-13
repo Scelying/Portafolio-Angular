@@ -13,6 +13,7 @@ import { MatListModule } from "@angular/material/list";
 import { MatInputModule } from "@angular/material/input";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatDialogModule } from "@angular/material/dialog";
+import { MatGridListModule } from "@angular/material/grid-list";
 import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
@@ -43,6 +44,7 @@ import { WeatherAppComponent } from './weather-app/weather-app.component';
     MatInputModule,
     MatCheckboxModule,
     MatDialogModule,
+    MatGridListModule,
     FormsModule
   ],
   // entryComponents:[ConfirmDialogComponent],
