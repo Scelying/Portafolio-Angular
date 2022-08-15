@@ -3,28 +3,35 @@
     <div class="header">
         <h1>Aplicación del clima</h1>
         <mat-divider></mat-divider>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, eum fuga? Ex dolore aperiam temporibus
-            ab commodi harum ut quaerat inventore. Asperiores in adipisci quidem hic repellat! Temporibus, illum
-            delectus.</p>
+        <p>Aplicación del clima que toma la direcicón IP para la geolocaclización. Arroja la ubicación del opreador de
+            internet.</p>
     </div>
     <br>
 
-    <mat-card>
+    <mat-card class="weather-card">
         <div *ngIf="loading">
             <h2>Cargando información, por favor espere.</h2>
         </div>
 
-        <div *ngIf="!loading" style="text-align: center">
+        <div *ngIf="!loading" style="text-align: center; min-width: 345px;">
             <p> Your location is: <i>{{country_name}}, {{region_name}} in {{city}}. </i></p>
-            <h2>The weather now is {{weatherNow}} </h2>
-            <mat-grid-list cols="3" rowHeight="2:1">
-                <mat-grid-tile colspan="1"><mat-icon>wb_cloudy</mat-icon></mat-grid-tile>
-                <mat-grid-tile colspan="2">
-                    <p>Datetime: </p> 
-                    <p>Temp: </p> 
-
+            <h2 style="text-transform: capitalize;"> {{weatherNow}} </h2>
+            <mat-grid-list cols="3" rows="2" rowHeight="50px">
+                <mat-grid-tile class="card-styles-icon" colspan="1" rowspan="2">
+                    <img src="{{icon}}" alt="weather icon">
+                    <!-- <mat-icon style="transform: scale(2);">wb_cloudy</mat-icon> -->
                 </mat-grid-tile>
-            </mat-grid-list>
+                <mat-grid-tile class="card-styles" style="padding-top: 15px;" colspan="2" rowspan="1">
+                    <h1 style="font-size: 30px;">{{temp}} C°</h1>
+                </mat-grid-tile>
+                <mat-grid-tile class="card-styles" colspan="1" rowspan="1">
+                    <p>Feels Like: {{feelsLike}} °C <br> Wind speed: {{windSpd}} m/s</p>
+                </mat-grid-tile>
+                <mat-grid-tile class="card-styles" colspan="1" rowspan="1">
+                    <p>TempMáx: {{tempMax}} °C <br> TempMin: {{tempMin}} °C</p>
+                </mat-grid-tile>
+            </mat-grid-list><br>
+            <p style="font-size: smaller;"> {{date}} </p>
         </div>
     </mat-card>
 </div>
