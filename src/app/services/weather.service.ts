@@ -23,7 +23,7 @@ export class WeatherService {
 
   async getLocationData() {
     const response = await fetch(this.ROUTE_API_LOCATION);
-    console.log(response);
+    // console.log(response);
     return await response.json();
   }
 

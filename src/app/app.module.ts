@@ -20,7 +20,7 @@ import { AppComponent } from './app.component';
 import { HomeProfileComponent } from './components/home-profile/home-profile.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
-import { WeatherAppComponent } from './weather-app/weather-app.component';
+import { WeatherAppComponent } from './components/weather-app/weather-app.component';
 
 @NgModule({
   declarations: [
