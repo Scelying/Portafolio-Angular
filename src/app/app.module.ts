@@ -14,6 +14,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatGridListModule } from "@angular/material/grid-list";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
@@ -45,6 +46,7 @@ import { WeatherAppComponent } from './components/weather-app/weather-app.compon
     MatCheckboxModule,
     MatDialogModule,
     MatGridListModule,
+    MatProgressSpinnerModule,
     FormsModule
   ],
   // entryComponents:[ConfirmDialogComponent],

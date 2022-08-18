@@ -45,7 +45,7 @@ export class WeatherAppComponent implements OnInit {
     this.tempMax = weatherData.main.temp_max;
     this.tempMin = weatherData.main.temp_min;
     this.windSpd = weatherData.wind.speed;
-    this.icon = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
+    this.icon = `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
     
     // Icon code test
     // this.icon = `http://openweathermap.org/img/wn/01n@2x.png`;
