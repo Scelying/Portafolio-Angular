@@ -22,6 +22,7 @@ import { HomeProfileComponent } from './components/home-profile/home-profile.com
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { WeatherAppComponent } from './components/weather-app/weather-app.component';
+import { RealtimeLocationComponent } from './components/realtime-location/realtime-location.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { WeatherAppComponent } from './components/weather-app/weather-app.compon
     HomeProfileComponent,
     TodoListComponent,
     ConfirmDialogComponent,
-    WeatherAppComponent
+    WeatherAppComponent,
+    RealtimeLocationComponent
   ],
   imports: [
     BrowserModule,
