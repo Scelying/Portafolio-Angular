@@ -30,6 +30,12 @@
         </li>
       </a>
 
+      <a routerLink="/app-realtime-location" routerLinkActive="active" (click)="drawer.toggle()" ariaCurrentWhenActive="page">
+        <li routerLinkActive="active">
+          <mat-icon class="list-icon">location_on</mat-icon> &nbsp; Localización en tiempo real
+        </li>
+      </a>
+
     </mat-list>
   </mat-sidenav>
   <mat-sidenav-content>
