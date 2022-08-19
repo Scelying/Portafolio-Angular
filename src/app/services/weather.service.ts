@@ -25,6 +25,28 @@ export class WeatherService {
     const response = await fetch(this.ROUTE_API_LOCATION);
     // console.log(response);
     return await response.json();
+
+    // if(!navigator.geolocation) {
+    //   return alert("El dispositivo no soporta geolocalización")
+    // }
+
+    // const onLocationAccess = (location: any) => {
+    //   const coords = location.coord;
+    //   console.log(coords);
+    //   return coords;
+    // }
+
+    // const onErrorLocation = (err: any) => {
+    //   console.log("Error de ubicación: ", err);
+    // }
+
+    // const localOptions = {
+    //   enableHighAccuracy: true,
+    //   maximumAge: 0,
+    //   timeout: 10000
+    // }
+
+    // navigator.geolocation.getCurrentPosition(onLocationAccess, onErrorLocation, localOptions);
   }
 
   async getWeatherData(latitude: string, longitude: string) {

@@ -29,15 +29,19 @@ export class WeatherAppComponent implements OnInit {
 
     // Get location
     const locationData = await this.weatherService.getLocationData();
-    this.city = locationData.city;
-    this.region_name = locationData.region;
-    this.country_name = locationData.country_name;
+    console.log(locationData);
+    
+    // this.city = locationData.city;
+    // this.region_name = locationData.region;
+    // this.country_name = locationData.country_name;
     const latitude = locationData.latitude;
     const longitude = locationData.longitude;
     
     // Get weather by location
     const weatherData = await this.weatherService.getWeatherData(latitude, longitude);
     
+    this.city = weatherData.name;
+    this.country_name = weatherData.sys.country;
     // Actual weather data
     this.weatherNow = weatherData.weather[0].description;
     this.feelsLike = weatherData.main.feels_like;
@@ -56,7 +60,7 @@ export class WeatherAppComponent implements OnInit {
     this.loading = false;
     
     // API CONNECT TEST
-    // console.log(weatherData);
+    console.log(weatherData);
     // console.log(this.weatherNow);
   }
 }
