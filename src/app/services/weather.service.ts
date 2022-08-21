@@ -5,26 +5,26 @@ import { Injectable } from '@angular/core';
 })
 
 export class WeatherService {
-  // readonly options = {
-  //   method: 'GET',
-  //   headers: {
-  //     'X-RapidAPI-Key': '8895a30e96msh9b6ae83d4c51df2p1b1544jsn252c9d717f4f',
-  //     'X-RapidAPI-Host': 'weatherbit-v1-mashape.p.rapidapi.com'
-  //   }
-  // };
-  // private ROUTE_API_LOCATION = `https://api.ipgeolocation.io/ipgeo?apiKey=${this.ipGeoAPIKey}`;
-  private ROUTE_API_LOCATION = 'https://json.geoiplookup.io/';
-  private OPEN_WEATHER_API = '6168bc99a8fb2d7db3a7f6f9d3090ac9';
 
-  // PRUEBA DE API OPEN WEATHER
-  // https://api.openweathermap.org/data/2.5/weather?lat=4.65124&lon=-74.1064&appid=6168bc99a8fb2d7db3a7f6f9d3090ac9
+  private OPEN_WEATHER_API = '6168bc99a8fb2d7db3a7f6f9d3090ac9';
 
   constructor() { }
 
-  async getLocationData() {
-    const response = await fetch(this.ROUTE_API_LOCATION);
-    // console.log(response);
-    return await response.json();
+  async getLocationData(): Promise<GeolocationPosition> {
+
+    const localOptions = {
+      enableHighAccuracy: true,
+      maximumAge: 0,
+      timeout: 10000
+    }
+
+    return new Promise((resolve, onErrorLocation) => {
+      navigator.geolocation.getCurrentPosition(
+        resolve,
+        onErrorLocation,
+        localOptions);
+    }
+    );
   }
 
   async getWeatherData(latitude: string, longitude: string) {

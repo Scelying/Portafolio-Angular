@@ -7,11 +7,9 @@ import { WeatherService } from '../../services/weather.service';
   styleUrls: ['./weather-app.component.css']
 })
 export class WeatherAppComponent implements OnInit {
-  // @Input() details: any
   date = new Date();
   loading = false;
   city = "";
-  region_name = "";
   country_name = "";
   weatherNow = {};
   feelsLike = "";
@@ -28,17 +26,24 @@ export class WeatherAppComponent implements OnInit {
     this.loading = true;
 
     // Get location
+    if (!navigator.geolocation) {
+      return alert("Este dispositivo no soporta geolocalización");
+    }
+
     const locationData = await this.weatherService.getLocationData();
-    this.city = locationData.city;
-    this.region_name = locationData.region;
-    this.country_name = locationData.country_name;
-    const latitude = locationData.latitude;
-    const longitude = locationData.longitude;
+    // console.log(locationData.coords);
+    
+    const latitude = locationData.coords.latitude.toString();
+    const longitude = locationData.coords.longitude.toString();
     
     // Get weather by location
     const weatherData = await this.weatherService.getWeatherData(latitude, longitude);
     
-    // Actual weather data
+    //Set location data
+    this.city = weatherData.name;
+    this.country_name = weatherData.sys.country;
+
+    // // Actual weather data
     this.weatherNow = weatherData.weather[0].description;
     this.feelsLike = weatherData.main.feels_like;
     this.temp = weatherData.main.temp;
@@ -49,13 +54,10 @@ export class WeatherAppComponent implements OnInit {
     
     // Icon code test
     // this.icon = `http://openweathermap.org/img/wn/01n@2x.png`;
-    
-    // this.detailsToday = weatherData.dataseries.slice(0, 1)[0];
-    // this.detailsNextDays = weatherData.dataseries.slice(1, 5);
 
     this.loading = false;
     
-    // API CONNECT TEST
+    // // API CONNECT TEST
     // console.log(weatherData);
     // console.log(this.weatherNow);
   }
