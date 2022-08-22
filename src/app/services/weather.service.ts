@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -6,7 +7,7 @@ import { Injectable } from '@angular/core';
 
 export class WeatherService {
 
-  private OPEN_WEATHER_API = '6168bc99a8fb2d7db3a7f6f9d3090ac9';
+  private OPEN_WEATHER_API = environment.OPEN_WEATHER_API;
 
   constructor() { }
 
@@ -32,14 +33,4 @@ export class WeatherService {
     return await response.json();
   }
 
-  parseDate(value: string) {
-    value = "" + value;
-    if (!value) {
-      return "";
-    }
-    let year = value.substring(0, 4);
-    let month = value.substring(4, 6);
-    let day = value.substring(6, 8);
-    return year + "-" + month + "-" + day;
-  }
 }
