@@ -1,9 +1,11 @@
-<h1 mat-dialog-title>Eliminar tarea</h1>
-<mat-divider></mat-divider>
-<div mat-dialog-content>
-  {{data.message}} del puesto {{data.index + 1}}?
-</div>
-<div mat-dialog-actions>
-  <button [autofocus]="false" mat-raised-button (click)="onClickNo()" color="secondary">No</button> 
-  <button mat-raised-button [mat-dialog-close]="true" cdkFocusInitial color="warn">Ok</button>
+<div>
+  <h1 mat-dialog-title>Eliminar tarea</h1>
+  <mat-divider></mat-divider>
+  <div mat-dialog-content>
+    {{data.message}} del puesto {{data.index + 1}}?
+  </div>
+  <div mat-dialog-actions>
+    <button [autofocus]="false" mat-raised-button (click)="onClickNo()" color="secondary">No</button> 
+    <button mat-raised-button [mat-dialog-close]="true" cdkFocusInitial color="warn">Ok</button>
+  </div>
 </div>
