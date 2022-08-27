@@ -3,14 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-realtime-location',
   templateUrl: './realtime-location.component.html',
-  styleUrls: ['./realtime-location.component.css']
+  styleUrls: ['./realtime-location.component.css'],
 })
 export class RealtimeLocationComponent implements OnInit {
-  
-  latitude= "";
-  Longitude= "";
+  latitude = '';
+  Longitude = '';
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.getLocation();
@@ -18,7 +17,7 @@ export class RealtimeLocationComponent implements OnInit {
 
   getLocation() {
     if (!navigator.geolocation) {
-        return alert("El dispositivo no soporta la geolocalización");
+      return alert('El dispositivo no soporta la geolocalización');
     }
 
     const onLocationAccess = (location: any) => {
@@ -26,21 +25,23 @@ export class RealtimeLocationComponent implements OnInit {
       this.latitude = location.coords.latitude;
       this.Longitude = location.coords.longitude;
       // console.log(this.latitude);
-      // console.log(this.Longitude);      
-    }
+      // console.log(this.Longitude);
+    };
 
     const onErrorLocation = (err: any) => {
-      console.log("Error de ubicación: ", err);
-    }
+      console.log('Error de ubicación: ', err);
+    };
 
     const locationOptions = {
       enableHighAccuracy: true,
-      maximumAge: 0, 
-      timeout: 10000
-    }
+      maximumAge: 0,
+      timeout: 10000,
+    };
 
-    navigator.geolocation.getCurrentPosition(onLocationAccess, onErrorLocation, locationOptions);
-
+    navigator.geolocation.getCurrentPosition(
+      onLocationAccess,
+      onErrorLocation,
+      locationOptions
+    );
   }
-
 }

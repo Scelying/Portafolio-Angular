@@ -1,59 +1,77 @@
 <div class="main-div">
-    <br>
-    <img src="../../../assets/handcrafts_space.svg" alt="planet" width="150px" height="150px" />
-    <br>
-    <h1>Hola, soy <span>Sebastian Cely</span></h1>
-    <h2>Desarrollador Web Full Stack</h2>
-    <div class="container">
-        <p>Este es un Portafolio de Aplicaciones Web, elaborado con Angular, que consta de
-            pequeñas aplicaciones demostrando sus funcionalidades básicas. <br><br> Seleccione el <b>menú de la
-                esquina superior izquierda</b> para navegar entre las aplicaciones disponibles</p>
+  <br />
+  <div class="profile-photo2">
+    <div class="profile-photo1">
+      <img
+        src="../../../assets/perfil-LinkedIn.jpg"
+        alt="profile"
+        width="240px"
+        height="240px"
+        style="border-radius: 29% 71% 73% 27% / 48% 41% 59% 52%"
+      />
     </div>
-    <br>
+  </div>
+  <br />
 
-    <h2 style="text-align: center;">Cuento con conocimientos en:</h2>
+  <h1>Hola, soy <span>Sebastian Cely</span></h1>
+  <h2>Desarrollador Web Full Stack</h2>
+  <div class="container">
+    <p>
+      Este es un Portafolio de Aplicaciones Web, elaborado con Angular, que
+      consta de pequeñas aplicaciones demostrando sus funcionalidades básicas.
+      <br /><br />
+      Seleccione el <b>menú de la esquina superior izquierda</b> para navegar
+      entre las aplicaciones disponibles
+    </p>
+  </div>
+  <br />
 
-    <div class="cards">
-        <a href="https://angular.io/" target="_blank">
-            <mat-card>
-                <mat-grid-list cols="3" rowHeight="20">
-                    <mat-grid-tile colspan="1" rowspan="1" style="animation: growCard .25s;">
-                        <img class="icon" src="../../../assets/angular.svg" alt="Angular Logo">
-                    </mat-grid-tile>
-                    <mat-grid-tile colspan="2" rowspan="1">
-                        <b style="font-size: 15;">Angular</b>
-                    </mat-grid-tile>
-                </mat-grid-list>
-            </mat-card>
-        </a>
+  <h2 style="text-align: center">Frameworks y lenguajes:</h2>
+  <caption>
+    Seleccione para ir a la documentación
+  </caption>
 
-        <a href="https://nodejs.org/" target="_blank">
-            <mat-card>
-                <mat-grid-list cols="3" rowHeight="20">
-                    <mat-grid-tile colspan="1" rowspan="1" style="animation: growCard .25s;">
-                        <img class="icon" src="../../../assets/nodejs-icon.svg" alt="Node.js" width="45px">
-                    </mat-grid-tile>
-                    <mat-grid-tile colspan="2" rowspan="1">
-                        <b style="font-size: 15;">Node.js</b>
-                    </mat-grid-tile>
-                </mat-grid-list>
-            </mat-card>
-        </a>
-
-        <a href="https://www.typescriptlang.org/" target="_blank">
-            <mat-card>
-                <mat-grid-list cols="3" rowHeight="20">
-                    <mat-grid-tile colspan="1" rowspan="1" style="animation: growCard .25s;">
-                        <img class="icon" src="../../../assets/typescript-icon.svg" alt="TypeScrpit Logo" width="40px">
-                    </mat-grid-tile>
-                    <mat-grid-tile colspan="2" rowspan="1">
-                        <b style="font-size: 15;">TypeScript</b>
-                    </mat-grid-tile>
-                </mat-grid-list>
-            </mat-card>
-        </a>
+  <div class="skills-container">
+    <div class="skills" *ngFor="let skill of skillsList">
+      <div (click)="skillClick(skill.ref)">
+        <div style="display: flex">
+          <div class="skill-icon">
+            <img
+              src="{{ skill.icon }}"
+              alt="{{ skill.name }}"
+              style="display: flexbox"
+            />
+          </div>
+          <div class="skill-name">
+            <b style="display: flexbox"> {{ skill.text }} </b>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+  <br />
 
+  <h2>Plataformas y herramientas</h2>
+  <caption>
+    Seleccione para conocer más
+  </caption>
 
-
+  <div class="skills-container">
+    <div class="skills" *ngFor="let tool of toolsList">
+      <div (click)="skillClick(tool.ref)">
+        <div style="display: flex">
+          <div class="skill-icon">
+            <img
+              src="{{ tool.icon }}"
+              alt="{{ tool.name }}"
+              style="display: flexbox"
+            />
+          </div>
+          <div class="skill-name">
+            <b style="display: flexbox"> {{ tool.text }} </b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

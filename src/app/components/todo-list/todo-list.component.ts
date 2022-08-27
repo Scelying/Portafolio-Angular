@@ -1,19 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskModel } from 'src/app/Interfaces/task-model';
 import { TaskService } from 'src/app/services/task.service';
-import { MatDialog } from "@angular/material/dialog";
-import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog.component";
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.css']
+  styleUrls: ['./todo-list.component.css'],
 })
 export class TodoListComponent implements OnInit {
-
-  constructor(
-    private taskService: TaskService,
-    public dialog: MatDialog) { }
+  constructor(private taskService: TaskService, public dialog: MatDialog) {}
 
   taskName = '';
   tasksList: TaskModel[] = [];
@@ -31,14 +28,14 @@ export class TodoListComponent implements OnInit {
     this.tasksList.push(newTask);
     this.taskService.saveTasks(this.tasksList);
     this.getTask();
-    this.taskName = "";
+    this.taskName = '';
   }
 
   changeStateTask() {
     this.taskService.saveTasks(this.tasksList);
   }
 
-  deleteTask(i: number,) {
+  deleteTask(i: number) {
     this.tasksList.splice(i, 1);
     this.taskService.saveTasks(this.tasksList);
   }
@@ -48,14 +45,14 @@ export class TodoListComponent implements OnInit {
       width: '350px',
       data: {
         message: `¿Desea eliminar la tarea: "${taskName}" `,
-        index: index
-      }
-    })
+        index: index,
+      },
+    });
 
-    dialogRef.afterClosed().subscribe(res => {
-      res? this.deleteTask(index): console.log(`Task "${taskName}" No deleted!`);
-    })
-
+    dialogRef.afterClosed().subscribe((res) => {
+      res
+        ? this.deleteTask(index)
+        : console.log(`Task "${taskName}" No deleted!`);
+    });
   }
-
 }
