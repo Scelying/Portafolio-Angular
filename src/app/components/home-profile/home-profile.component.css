@@ -1,7 +1,7 @@
 .main-div {
     display: flex;
     justify-content: flex-start;
-    height: 800px;
+    height: 1400px;
     align-items: center;
     flex-direction: column;
     background-color: #ffffff;
@@ -10,14 +10,34 @@
     background-size: cover;
 }
 
+div.profile-photo1 {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: #16d8ff80;
+    border-radius: 77% 23% 24% 76% / 42% 48% 52% 58%;
+    width: 240px;
+    height: 245px;
+}
+
+div.profile-photo2 {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: #db3964a9;
+    border-radius: 34% 66% 74% 26% / 72% 61% 39% 28%;
+    width: 255px;
+    height: 240px;
+}
+
 h1 {
     font-family: 'sarabun', 'arial', sans-serif;
     font-size: xx-large;
+    margin: 10px;
 }
 
 h2 {
     font-family: 'sarabun', 'arial', sans-serif;
     font-weight: 700;
+    margin: 10px;
 }
 
 p {
@@ -33,42 +53,56 @@ p {
 }
 
 div.container {
-    max-width: 600px;
+    max-width: 800px;
     min-width: 150px;
     text-align: justify;
 }
 
-div.cards {
+div.skills-container {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: stretch;
-    max-width: 450px;
-    min-width: 125px;    
+    min-width: 150px;
+    max-width: 800px;
 }
 
-mat-card {
-    display: flexbox;
-    padding: 12px;
-    width: 110px;
+div.skills {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    margin: 10px;
+    min-width: fit-content;
+    height: 50px;
+    justify-content: center;
     border-radius: 10px;
-    margin: 5px;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
     background: #ffffff1f;
-    box-shadow: 3px 3px 6px 1px rgba(26, 26, 26, 0.233) !important;
+    box-shadow: -3px -3px 6px 1px #ffffffc2, 3px 3px 6px 1px rgba(26, 26, 26, 0.233) !important;
+}
+
+div.skills:hover {
+    background: lightcyan;
+    cursor: pointer;
+}
+
+div.skill-icon {
+    display: flex;
+    width: fit-content;
+    height: 30px;
+    padding: 5px;
+    margin: 5px;
+    animation: growCard 0.5s
+}
+
+div.skill-name {
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+    align-items: center;
 }
 
 mat-card:hover {
     background: #fafafa;
-}
-
-img.icon {
-    width: 20px;
-    height: 20px;
 }
 
 @keyframes growCard {
