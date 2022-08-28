@@ -17,12 +17,14 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsModule } from '@angular/forms';
 
+
 import { AppComponent } from './app.component';
 import { HomeProfileComponent } from './components/home-profile/home-profile.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { WeatherAppComponent } from './components/weather-app/weather-app.component';
-import { RealtimeLocationComponent } from './components/realtime-location/realtime-location.component';
+import { FilmFinderComponent } from './components/film-finder/film-finder.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { RealtimeLocationComponent } from './components/realtime-location/realti
     TodoListComponent,
     ConfirmDialogComponent,
     WeatherAppComponent,
-    RealtimeLocationComponent,
+    FilmFinderComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +52,7 @@ import { RealtimeLocationComponent } from './components/realtime-location/realti
     MatGridListModule,
     MatProgressSpinnerModule,
     FormsModule,
+    HttpClientModule
   ],
   // entryComponents:[ConfirmDialogComponent],
   providers: [],
