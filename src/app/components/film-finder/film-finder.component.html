@@ -1,0 +1,59 @@
+<div class="main-div">
+  <br />
+  <div class="header">
+    <h1>Buscador de películas</h1>
+    <mat-divider></mat-divider>
+    <br />
+    <p style="text-align: justify">
+      La aplicación realiza la búsqueda a partir del nombre de la
+      <span style="text-decoration: underline">película o serie</span>
+      utilizando la API de <strong>Open Movie Database</strong>. La petición nos
+      devuelve el título, la carátula, la trama, el director, actores y el
+      ranking de calificación promedio.
+    </p>
+    <p>(Se debe ingresar el nombre en <strong>inlgés</strong>, dado que es el idioma nativo del OMDb)</p>
+  </div>
+  <br />
+
+  <mat-form-field appearance="fill" hintLabel="Máx. 300 caracteres">
+    <mat-label type="text">Ingrese el nombre de la película</mat-label>
+    <input
+      matInput
+      maxlength="50"
+      type="text"
+      [(ngModel)]="searchText"
+      (keydown.enter)="getData()"
+    />
+    <mat-hint align="end">{{ searchText.length || 0 }}/50</mat-hint>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="getData()"
+    [disabled]="!searchText"
+  >
+    Buscar
+  </button>
+  <br />
+
+  <mat-card class="movie-card" *ngIf="title === '' || title === undefined">
+    <h3 style="font-weight: 500; text-align: center">Sin resultados</h3>
+    <mat-divider></mat-divider>
+    <p>No se encuentran películas que coincidan con su criterio de búsqueda</p>
+  </mat-card>
+
+  <mat-card *ngIf="title !== undefined" class="movie-card">
+    <mat-card-header>
+      <mat-card-title>{{ title }}</mat-card-title>
+      <mat-card-subtitle> {{ year }} </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{ poster }}" alt="Cover" />
+    <mat-card-content>
+      <p><b>Plot:</b> {{ plot }}</p>
+      <p><b>Director:</b> {{ director }}</p>
+      <p><b>Actors:</b> {{ actors }}</p>
+      <h2><b>Rating:</b> {{ imdRating }}</h2>
+    </mat-card-content>
+  </mat-card>
+  <br />
+</div>

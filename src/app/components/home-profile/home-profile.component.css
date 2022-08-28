@@ -103,7 +103,7 @@ div.skill-icon {
     height: 30px;
     padding: 5px;
     margin: 5px;
-    animation: growCard 0.5s
+    animation: growCard 0.5s;
 }
 
 div.skill-name {
@@ -145,5 +145,17 @@ span.underline {
 
     to {
         transform: scale(1);
+    }
+}
+
+@keyframes appearPhoto {
+    from {
+        /* transform: scale(0); */
+        opacity: 0;
+    }
+
+    to {
+        /* transform: scale(1); */
+        opacity: 1;
     }
 }

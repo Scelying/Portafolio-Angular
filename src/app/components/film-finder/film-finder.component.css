@@ -1,7 +1,8 @@
 .main-div {
     display: flex;
     justify-content: flex-start;
-    height: 800px;
+    min-height: 800px;
+    height: fit-content;
     align-items: center;
     flex-direction: column;
     background-color: #ffffff;
@@ -10,7 +11,51 @@
     background-size: cover;
 }
 
+div.header {
+    display: flex;
+    max-width: 600px;
+    min-width: 250px;
+    width: 80%;
+    background-color: #ffffff;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px 1px rgba(31, 31, 31, 0.233);
+}
+
 h1 {
+    font-family: 'sarabun', 'arial', sans-serif;
+    font-weight: 500;
     text-align: center;
-    font-size: xx-large;
+    font-weight: 800;
+    padding-top: 10px;
+}
+
+mat-form-field {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    min-width: 250px;
+    width: 80%;
+    justify-content: center;
+}
+
+.movie-card {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: #ffffff11;
+    max-width: 250px;
+    animation: appearCard 1s;
+}
+
+@keyframes appearCard {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

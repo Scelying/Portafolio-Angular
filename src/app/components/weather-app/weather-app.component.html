@@ -22,6 +22,8 @@
         <div *ngIf="!loading" style="text-align: center; min-width: 345px;">
             <p> Su ubicación es: <i>{{city}}, {{country_name}}. </i></p>
             <h2 style="text-transform: capitalize;"> {{weatherNow}} </h2>
+            <mat-divider></mat-divider>
+            <br>
             <mat-grid-list cols="3" rows="2" rowHeight="50px">
                 <mat-grid-tile class="card-styles-icon" colspan="1" rowspan="2">
                     <img src="{{icon}}" alt="weather icon">
