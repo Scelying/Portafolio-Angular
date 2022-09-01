@@ -1,6 +1,4 @@
 <div class="main-div">
-  <br />
-
   <div class="header">
     <h1>Aplicación de tareas</h1>
     <mat-divider></mat-divider>
@@ -12,7 +10,6 @@
     </p>
   </div>
 
-  <br />
   <form>
     <mat-form-field appearance="fill" hintLabel="Máx. 300 caracteres">
       <mat-label type="text">Ingrese una tarea</mat-label>
@@ -37,7 +34,7 @@
     >
       Agregar tarea
     </button>
-    <br />
+    
     <mat-card *ngIf="tasksList.length === 0">
       <h3 style="font-weight: 500">No hay tareas pendientes</h3>
       <mat-divider></mat-divider>
@@ -46,7 +43,6 @@
     <mat-card *ngIf="tasksList.length > 0" max-width="200">
       <h2 style="font-weight: 500">Listado de Tareas</h2>
       <mat-divider></mat-divider>
-      <br />
 
       <li *ngFor="let task of tasksList; let i = index">
         <mat-checkbox

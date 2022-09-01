@@ -12,7 +12,9 @@
         "project": [
           "tsconfig.json"
         ],
-        "tsconfigRootDir": "portafolio-angular",
+        // "tsconfigRootDir": "portafolio-angular",
+        // "tsconfigRootDir": __dirname,
+        "ecmaVersion": 2020,
         "sourceType": "module",
         "createDefaultProgram": true
       },

@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap');
+
 .main-div {
     display: flex;
     justify-content: flex-start;
     height: 800px;
+    margin-top: 25px;
     align-items: center;
     flex-direction: column;
     background-color: #ffffff;
@@ -26,7 +29,7 @@ div.header {
 }
 
 h1 {
-    font-family: 'sarabun', 'arial', sans-serif;
+    font-family: 'Sarabun', 'arial', sans-serif;
     font-weight: 500;
     text-align: center;
     font-weight: 800;
@@ -34,13 +37,14 @@ h1 {
 }
 
 p {
-    font-family: 'sarabun', 'arial', sans-serif;
+    font-family: 'Sarabun', 'arial', sans-serif;
     font-weight:500;
 }
 
 mat-card.weather-card {
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
+    margin-top: 20px;
     background: #ffffff1f;
     box-shadow: 1px 1px 4px 1px rgba(31, 31, 31, 0.233);
 }

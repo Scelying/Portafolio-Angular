@@ -1,5 +1,5 @@
 <div class="main-div">
-  <br />
+
   <div class="profile-photo2">
     <div class="profile-photo1">
       <img
@@ -11,7 +11,6 @@
       />
     </div>
   </div>
-  <br />
 
   <h3 class="typewriter" style="font-size: x-large">Hola, soy</h3>
   <h1 class="typewriter" style="animation-delay: 1.4s">
@@ -39,11 +38,10 @@
     <div class="skills" *ngFor="let skill of skillsList">
       <div (click)="skillClick(skill.ref)">
         <div style="display: flex">
-          <div class="skill-icon">
+          <div class="skill-icon-{{skill.size}}">
             <img
               src="{{ skill.icon }}"
               alt="{{ skill.name }}"
-              style="display: flexbox"
             />
           </div>
           <div class="skill-name">
@@ -64,7 +62,7 @@
     <div class="skills" *ngFor="let tool of toolsList">
       <div (click)="skillClick(tool.ref)">
         <div style="display: flex">
-          <div class="skill-icon">
+          <div class="skill-icon-{{tool.size}}">
             <img
               src="{{ tool.icon }}"
               alt="{{ tool.name }}"

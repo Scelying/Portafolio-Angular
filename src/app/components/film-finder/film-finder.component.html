@@ -1,9 +1,7 @@
 <div class="main-div">
-  <br />
   <div class="header">
     <h1>Buscador de películas</h1>
     <mat-divider></mat-divider>
-    <br />
     <p style="text-align: justify">
       La aplicación realiza la búsqueda a partir del nombre de la
       <span style="text-decoration: underline">película o serie</span>
@@ -11,9 +9,11 @@
       devuelve el título, la carátula, la trama, el director, actores y el
       ranking de calificación promedio.
     </p>
-    <p>(Se debe ingresar el nombre en <strong>inlgés</strong>, dado que es el idioma nativo del OMDb)</p>
+    <p>
+      (Se debe ingresar el nombre en <strong>inlgés</strong>, dado que es el
+      idioma nativo del OMDb)
+    </p>
   </div>
-  <br />
 
   <mat-form-field appearance="fill" hintLabel="Máx. 300 caracteres">
     <mat-label type="text">Ingrese el nombre de la película</mat-label>
@@ -34,7 +34,6 @@
   >
     Buscar
   </button>
-  <br />
 
   <mat-card class="movie-card" *ngIf="title === '' || title === undefined">
     <h3 style="font-weight: 500; text-align: center">Sin resultados</h3>
