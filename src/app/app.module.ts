@@ -16,6 +16,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import { AppComponent } from './app.component';
 import { HomeProfileComponent } from './components/home-profile/home-profile.component';
@@ -24,6 +27,8 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
 import { WeatherAppComponent } from './components/weather-app/weather-app.component';
 import { FilmFinderComponent } from './components/film-finder/film-finder.component';
 import { HttpClientModule } from '@angular/common/http';
+import { WebChatComponent } from './components/web-chat/web-chat.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -33,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     ConfirmDialogComponent,
     WeatherAppComponent,
     FilmFinderComponent,
+    WebChatComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +58,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatProgressSpinnerModule,
     FormsModule,
     HttpClientModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   // entryComponents:[ConfirmDialogComponent],
   providers: [],

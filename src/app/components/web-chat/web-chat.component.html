@@ -1,0 +1,20 @@
+<div class="main-div">
+  <h1>Aplicación de mensajería Web</h1>
+  <mat-drawer-container>
+    <mat-drawer mode="side" opened>Usuarios</mat-drawer>
+    <mat-drawer-content>
+      <div class="messages">messages...</div>
+      <div class="input">
+        <mat-form-field>
+          <textarea
+            matInput
+            [(ngModel)]="message"
+            (keydown.enter)="handleSubmit($event)"
+            placeholder="Escribir mensaje..."
+          ></textarea>
+        </mat-form-field>
+        <button mat-button color="primary" (click)="send()">Enviar</button>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
