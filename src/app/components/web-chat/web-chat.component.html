@@ -9,11 +9,10 @@
           <textarea
             matInput
             [(ngModel)]="message"
-            (keydown.enter)="handleSubmit($event)"
             placeholder="Escribir mensaje..."
           ></textarea>
         </mat-form-field>
-        <button mat-button color="primary" (click)="send()">Enviar</button>
+        <button mat-button color="primary">Enviar</button>
       </div>
     </mat-drawer-content>
   </mat-drawer-container>
