@@ -1,0 +1,26 @@
+<div class="main-div">
+  <div class="header">
+    <h1>Chat web App</h1>
+    <mat-divider></mat-divider>
+
+    <p style="text-align: justify">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum magnam,
+      recusandae voluptatibus, eos quas quo sequi minima quod aut molestias quam
+      consectetur iste. Perferendis itaque optio rerum ipsum possimus dolor!
+    </p>
+  </div>
+
+  <mat-card>
+    <h3>Ingrese un nombre de usuario para el chat</h3>
+    <mat-divider></mat-divider>
+    <form class="user-form" >
+        <mat-form-field class="userbox-full-width" appearance="fill">
+          <mat-label>Usuario</mat-label>
+          <input matInput [(ngModel)]="userInput" name="userbox" maxlength="256">
+          <mat-hint align="end">{{userInput.length}} / 256</mat-hint>
+        </mat-form-field>
+      </form>
+    </mat-card>
+    <button mat-raised-button color="primary" (click)="Login(userInput)" >Ingresar</button>
+
+</div>

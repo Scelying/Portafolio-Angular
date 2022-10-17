@@ -1,7 +1,10 @@
 <div class="main-div">
   <h1>Aplicación de mensajería Web</h1>
   <mat-drawer-container>
-    <mat-drawer mode="side" opened>Usuarios</mat-drawer>
+    <mat-drawer mode="side" opened>
+      <h4>Usuarios</h4>
+      <li> {{user}} </li>
+    </mat-drawer>
     <mat-drawer-content>
       <div class="messages">messages...</div>
       <div class="input">

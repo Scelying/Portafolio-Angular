@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap');
+
+.main-div {
+    display: flex;
+    justify-content: flex-start;
+    min-height: 600px;
+    height: fit-content;
+    align-items: center;
+    margin-top: 25px;
+    flex-direction: column;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1161%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(250%2c 250%2c 250%2c 1)'%3e%3c/rect%3e%3cpath d='M -340.8808456465661%2c118 C -196.88%2c190.4 91.12%2c470.6 379.1191543534339%2c480 C 667.12%2c489.4 811.12%2c159.6 1099.119154353434%2c165 C 1387.12%2c170.4 1750.94%2c522.6 1819.119154353434%2c507 C 1887.3%2c491.4 1515.82%2c171 1440%2c87' stroke='rgba(38%2c 156%2c 191%2c 0.16)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -912.5395584121709%2c375 C -768.54%2c320.4 -480.54%2c98.6 -192.53955841217095%2c102 C 95.46%2c105.4 239.46%2c376.6 527.4604415878291%2c392 C 815.46%2c407.4 1064.95%2c167.4 1247.460441587829%2c179 C 1429.97%2c190.6 1401.49%2c395.8 1440%2c450' stroke='rgba(38%2c 156%2c 191%2c 0.16)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -799.2991319248869%2c277 C -655.3%2c304 -367.3%2c459.4 -79.29913192488685%2c412 C 208.7%2c364.6 352.7%2c37.4 640.7008680751131%2c40 C 928.7%2c42.6 1200.84%2c378 1360.7008680751132%2c425 C 1520.56%2c472 1424.14%2c305 1440%2c275' stroke='rgba(38%2c 156%2c 191%2c 0.16)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1161'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+div.header {
+    display: flex;
+    max-width: 600px;
+    min-width: 250px;
+    width: 80%;
+    background-color: #ffffff;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px 1px rgba(31, 31, 31, 0.233);
+}
+
+h1 {
+    font-family: 'Sarabun', 'arial', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    font-weight: 800;
+    padding-top: 10px;
+}
+
+p {
+    font-family: 'Sarabun', 'arial', sans-serif;
+    font-weight: 500;
+}
+
+mat-card {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    background: #ffffff1f;
+    box-shadow: 1px 1px 4px 1px rgba(31, 31, 31, 0.233);
+}
+
+.user-form {
+    min-width: 180px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.userbox-full-width {
+    width: 100%;
+}
+
+button {
+    margin: 20px;
+}
