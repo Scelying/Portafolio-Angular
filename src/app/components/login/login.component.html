@@ -13,14 +13,21 @@
   <mat-card>
     <h3>Ingrese un nombre de usuario para el chat</h3>
     <mat-divider></mat-divider>
-    <form class="user-form" >
-        <mat-form-field class="userbox-full-width" appearance="fill">
-          <mat-label>Usuario</mat-label>
-          <input matInput [(ngModel)]="userInput" name="userbox" maxlength="256">
-          <mat-hint align="end">{{userInput.length}} / 256</mat-hint>
-        </mat-form-field>
-      </form>
-    </mat-card>
-    <button mat-raised-button color="primary" (click)="Login(userInput)" >Ingresar</button>
-
+    <form class="user-form">
+      <mat-form-field class="userbox-full-width" appearance="fill">
+        <mat-label>Usuario</mat-label>
+        <input
+          matInput
+          [(ngModel)]="userInput"
+          name="userbox"
+          maxlength="256"
+          (keydown.enter)="Login(userInput)"
+        />
+        <mat-hint align="end">{{ userInput.length }} / 256</mat-hint>
+      </mat-form-field>
+    </form>
+  </mat-card>
+  <button mat-raised-button color="primary" (click)="Login(userInput)">
+    Ingresar
+  </button>
 </div>
