@@ -62,8 +62,20 @@ textarea {
 }
 
 div.messages {
-    height: 305px;
+
+    height: 200px;
     /* overflow: scroll; */
+}
+
+div.mybubble {
+    /* position: fixed; */
+    align-content: flex-start;
+    background-color: antiquewhite;
+    width: 60%;
+    border-radius: 10px;
+    margin-left: 5px;
+    padding: 5px;
+    min-width: fit-content;
 }
 
 div.input {

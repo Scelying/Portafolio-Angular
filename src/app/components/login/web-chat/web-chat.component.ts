@@ -7,12 +7,24 @@ import { AuthChatService } from '../../../services/auth-chat.service';
   styleUrls: ['./web-chat.component.css'],
 })
 export class WebChatComponent implements OnInit {
-  user = "Default";
+  user = 'Default';
   message = '';
+  dateCreated = '';
 
   constructor(public authService: AuthChatService) {}
 
   ngOnInit(): void {
     this.user = this.authService.userName;
+  }
+
+  sendMessage(): any {
+    if (this.message.trim().length !== 0) {
+      const bubbleMessage = document.createElement<"div">('div');
+      bubbleMessage.setAttribute("ngClass", "mybubble");
+      // bubbleMessage.className = 'mybubble';
+      bubbleMessage.innerHTML = `<p style="font-size: smaller; margin: 0px;"> ${this.user} dice: </p> ${this.message}`;
+      document.getElementById('msgbox')?.appendChild(bubbleMessage);
+      this.message = "";
+    }
   }
 }
