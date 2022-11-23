@@ -1,6 +1,26 @@
 <div class="main-div">
   <h1>Aplicación de mensajería Web</h1>
-  <mat-drawer-container>
+  <div id="chatroom" class="chatroom">
+    <div *ngFor="let mg of msgs" ngClass="{{mg.clase}}">
+      <p style="font-size: smaller; margin: 0"> {{mg.user}} dice:</p>
+      <p>{{mg.message}}
+        <caption style="font-size: xx-small; margin: 0px;"> <i>{{mg.dateCreated}}</i></caption>
+      </p>
+    </div> 
+  </div>
+  <div class="input">
+    <mat-form-field>
+      <textarea
+        matInput
+        [(ngModel)]="messagebox"
+        placeholder="Escribir mensaje..."
+        (keydown.enter)="sendMessage()"
+      ></textarea>
+    </mat-form-field>
+    <button mat-button color="primary" (click)="sendMessage()">Enviar</button>
+  </div>
+
+  <!-- <mat-drawer-container>
     <mat-drawer mode="side" opened>
       <h4>Usuarios</h4>
       <li>{{ user }}</li>
@@ -28,5 +48,5 @@
         </button>
       </div>
     </mat-drawer-content>
-  </mat-drawer-container>
+  </mat-drawer-container> -->
 </div>

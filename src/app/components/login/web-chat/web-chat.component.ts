@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthChatService } from '../../../services/auth-chat.service';
+import { MsgService } from '../../../services/msg.service';
+import { Messages } from '../../../Interfaces/messages';
 
 @Component({
   selector: 'app-web-chat',
@@ -7,24 +9,33 @@ import { AuthChatService } from '../../../services/auth-chat.service';
   styleUrls: ['./web-chat.component.css'],
 })
 export class WebChatComponent implements OnInit {
-  user = 'Default';
-  message = '';
-  dateCreated = '';
+  constructor(
+    public authService: AuthChatService,
+    private msgService: MsgService, 
+  ) {}
 
-  constructor(public authService: AuthChatService) {}
+  usuario = '';
+  msgs: Messages[] = [];
+  messagebox = '';
+
 
   ngOnInit(): void {
-    this.user = this.authService.userName;
+    this.usuario = this.authService.userName;
+    this.msgs = this.msgService.getMsgs();
   }
 
   sendMessage(): any {
-    if (this.message.trim().length !== 0) {
-      const bubbleMessage = document.createElement<"div">('div');
-      bubbleMessage.setAttribute("ngClass", "mybubble");
-      // bubbleMessage.className = 'mybubble';
-      bubbleMessage.innerHTML = `<p style="font-size: smaller; margin: 0px;"> ${this.user} dice: </p> ${this.message}`;
-      document.getElementById('msgbox')?.appendChild(bubbleMessage);
-      this.message = "";
+    if (this.messagebox.trim().length !== 0) {
+      let newMsg: Messages = {
+        clase: 'mybubble',
+        user: this.usuario,
+        message: this.messagebox,
+        dateCreated: '12/ago/2022',
+      };
+      this.msgs.push(newMsg);
+      document.getElementById("chatroom")?.scroll(0, 500);
+      this.messagebox = "";
     }
   }
+  
 }
