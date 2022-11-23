@@ -16,6 +16,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsModule } from '@angular/forms';
+import { MatMenuModule } from "@angular/material/menu";
 
 import { AppComponent } from './app.component';
 import { HomeProfileComponent } from './components/home-profile/home-profile.component';
@@ -57,6 +58,7 @@ import { LoginComponent } from './components/login/login.component';
     MatProgressSpinnerModule,
     FormsModule,
     HttpClientModule,
+    MatMenuModule,
   ],
   // entryComponents:[ConfirmDialogComponent],
   providers: [],

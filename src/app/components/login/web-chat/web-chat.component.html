@@ -1,12 +1,36 @@
 <div class="main-div">
   <h1>Aplicación de mensajería Web</h1>
-  <div id="chatroom" class="chatroom">
-    <div *ngFor="let mg of msgs" ngClass="{{mg.clase}}">
-      <p style="font-size: smaller; margin: 0"> {{mg.user}} dice:</p>
-      <p>{{mg.message}}
-        <caption style="font-size: xx-small; margin: 0px;"> <i>{{mg.dateCreated}}</i></caption>
-      </p>
-    </div> 
+  <div class="bannerOption">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="usuarios">
+        <mat-icon>supervised_user_circle</mat-icon>
+        <span>Usuarios Conectados</span>
+      </button>
+      <button mat-menu-item (click)="exitChat()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Cerrar Sesión</span>
+      </button>
+    </mat-menu>
+
+    <mat-menu #usuarios="matMenu" style="overflow: scroll">
+      <span mat-menu-item *ngFor="let user of listaUsuarios"> {{user}} </span>
+    </mat-menu>
+
+    <h3 style="margin: 8px; font-weight: 500">
+      {{ usuario }}
+    </h3>
+  </div>
+  <div #scrollMe id="chatroom" class="chatroom">
+    <div *ngFor="let mg of msgs" ngClass="{{ mg.clase }}">
+      <p style="font-size: smaller; margin: 0">{{ mg.user }} dice:</p>
+      <p style="margin: 0">{{ mg.message }}</p>
+      <div class="date">
+        <i>{{ mg.dateCreated }}</i>
+      </div>
+    </div>
   </div>
   <div class="input">
     <mat-form-field>
