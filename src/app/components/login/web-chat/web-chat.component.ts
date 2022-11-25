@@ -47,7 +47,6 @@ export class WebChatComponent implements OnInit, AfterViewChecked {
 
   ngOnInit(): void {
     this.usuario = this.authService.userName;
-    // this.listaUsuarios = this.authService.users;
     const userRef = ref(this.db, 'users');
     onValue(userRef, (snapshot: any) => {
       this.listaUsuarios = [];
@@ -94,7 +93,6 @@ export class WebChatComponent implements OnInit, AfterViewChecked {
         ).toLocaleTimeString()}`,
       };
       set(ref(this.db, `chats/${newMsg.id}`), newMsg);
-      // this.msgs.push(newMsg);
       this.messagebox = '';
     }
   }

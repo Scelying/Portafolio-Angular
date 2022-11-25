@@ -16,7 +16,7 @@
     </mat-menu>
 
     <mat-menu #usuarios="matMenu" style="overflow: scroll">
-      <span mat-menu-item *ngFor="let user of listaUsuarios"> {{user}} </span>
+      <span mat-menu-item *ngFor="let user of listaUsuarios"> {{ user }} </span>
     </mat-menu>
 
     <h3 style="margin: 8px; font-weight: 500">
@@ -24,6 +24,17 @@
     </h3>
   </div>
   <div #scrollMe id="chatroom" class="chatroom">
+    <div class="otherbubble">
+      <p style="font-size: smaller; margin: 0">Admin dice:</p>
+      <p style="margin: 0">
+        Hola, bienvenido a la sala de chat! Te invito a que pruebes su
+        funcionamiento en dos dispositivos simultáneamente. Saludos!
+      </p>
+      <div class="date">
+        <i>25/11/2022</i>
+      </div>
+    </div>
+
     <div *ngFor="let mg of msgs" ngClass="{{ mg.clase }}">
       <p style="font-size: smaller; margin: 0">{{ mg.user }} dice:</p>
       <p style="margin: 0">{{ mg.message }}</p>

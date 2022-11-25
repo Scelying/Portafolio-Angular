@@ -51,7 +51,6 @@ export class LoginComponent implements OnInit {
           };
           set(ref(this.db, `users/${newUser.userName}`), newUser);
           this.authService.userName = this.userInput;
-          // this.authService.users = this.listaUsuarios;
           this.router.navigateByUrl('/app-web-chat');
         } catch (error) {}
       }
