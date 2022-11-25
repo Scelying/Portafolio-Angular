@@ -8,12 +8,13 @@ export const environment = {
   movieAPI: 'https://www.omdbapi.com/?t=',
   movieAPIKey: '2ebcad8d',
   firebase: {
-    apiKey: 'AIzaSyDAuym1P-qSkKDVSYwljvrTpwL6p5EQ9Zw',
-    authDomain: 'chat-web-827ff.firebaseapp.com',
-    projectId: 'chat-web-827ff',
-    storageBucket: 'chat-web-827ff.appspot.com',
-    messagingSenderId: '233365305608',
-    appId: '1:233365305608:web:ac46f705eb5f7e2b2ed4bd',
+    apiKey: 'AIzaSyBm8ojjWlKjhQD-mYuC7x53UBxa1IZbaRo',
+    authDomain: 'webchat-app-84289.firebaseapp.com',
+    databaseURL: 'https://webchat-app-84289-default-rtdb.firebaseio.com',
+    projectId: 'webchat-app-84289',
+    storageBucket: 'webchat-app-84289.appspot.com',
+    messagingSenderId: '797645774263',
+    appId: '1:797645774263:web:36376d421a90ed6de65c32',
   },
 };
 
